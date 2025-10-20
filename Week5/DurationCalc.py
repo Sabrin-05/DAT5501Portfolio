@@ -5,7 +5,8 @@ import datetime
 import unittest
 
 def dur_calc():
-    """function takes in users date
+    """
+    function takes in users date
     minuses user date from todays date 
     to calculators how many days in the past it is 
     """ 
