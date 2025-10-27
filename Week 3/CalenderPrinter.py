@@ -1,3 +1,4 @@
+# Created a calander printer to print the month correctly according to user input 
 def calander_printer():
     num_days = int(input('how many days in the month?:'))
     start_day = input('what day of the week does the month start on?:')
