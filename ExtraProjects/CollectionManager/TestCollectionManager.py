@@ -5,11 +5,11 @@ from MainCode import remove_show
 class my_unit_tests(unittest.TestCase):
     def test_date_calc(self):
         '''
-        Function checks that the difference between user input and todays date is correct
+        Function checks if show list is updating correctly
         '''
         '''test_date = "2025-10-01"
-        today = np.datetime64('today')
-        assumed_result = np.datetime64(test_date) - today
+        test_date2 = "2025-09-01"
+        assumed_result = np.datetime64(test_date) - np.datetime64(test_date2)
 
         actual_result = dur_calc(test_date)
     
