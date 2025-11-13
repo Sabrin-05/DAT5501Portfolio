@@ -13,4 +13,18 @@ print(CO2_emissions_df)
 df_world = CO2_emissions_df[CO2_emissions_df['Entity'] == 'World']
 CO2_df = df_world[(df_world['Year'] >= 1925) & (df_world['Year'] <= 2025)]
 print(CO2_df)
-#x = CO2_emissions_df['year']
+
+#use np.ployfit to create a....
+x = CO2_df['Year']
+y = CO2_df['Global average temperature anomaly relative to 1861-1890']
+
+coefficients = np.polyfit(x, y, 2)
+print("Linear Fit Coefficients:", coefficients)
+
+# Create polynomial function
+p = np.poly1d(coefficients)
+
+plt.scatter(x, y, label='Data Points')
+plt.plot(x, p(x), label='Linear Fit', color='red')
+plt.legend()
+plt.show()
