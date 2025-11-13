@@ -10,3 +10,7 @@ CO2_emissions_df= pd.read_csv("Week8/temperature-anomaly.csv")
 print(CO2_emissions_df)
 
 #Cleaning the data 
+df_world = CO2_emissions_df[CO2_emissions_df['Entity'] == 'World']
+CO2_df = df_world[(df_world['Year'] >= 1925) & (df_world['Year'] <= 2025)]
+print(CO2_df)
+#x = CO2_emissions_df['year']
