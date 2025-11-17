@@ -24,7 +24,7 @@ print(second_df)
 x = CO2_df['Year']
 y = CO2_df['Global average temperature anomaly relative to 1861-1890']
 
-coefficients = np.polyfit(x, y, 5)
+coefficients = np.polyfit(x, y, 6)
 print("Linear Fit Coefficients:", coefficients)
 
 # Create polynomial function
@@ -79,4 +79,8 @@ plt.grid(True)
 
 plt.show()
 
- 
+#bayesian fit (BIC)
+
+BIC = chi2 + 6 * np.log(len(x))
+plt.plot(degrees, BIC, marker="o")
+plt.show()
