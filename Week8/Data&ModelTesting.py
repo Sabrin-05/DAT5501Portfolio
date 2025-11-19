@@ -42,8 +42,8 @@ plt.show()
 degrees = range(1, 11)
 
 chi2_list = []
-
 chi2_reduced_list = []
+bic_list = []
 
 sigma = 0.05 * np.ones_like(y)
  
@@ -56,31 +56,32 @@ for i in degrees:
     y_pred = p(x)
  
     chi2 = np.sum(((y - y_pred) / sigma) ** 2)
-
     dof = len(x) - (i + 1)        # n − number_of_parameters
-
-    chi2_red = chi2 / dof
+    chi2_reduced = chi2 / dof
  
+    BIC = chi2 + (i + 1) * np.log(len(x))
+    
     chi2_list.append(chi2)
+    chi2_reduced_list.append(chi2_reduced)
+    bic_list.append(BIC)
 
-    chi2_reduced_list.append(chi2_red)
- 
+    
+
+#Plot graph for reduced chi-squared
 plt.figure(figsize=(8,5))
-
 plt.plot(degrees, chi2_reduced_list, marker="o")
-
 plt.xlabel("Polynomial Degree")
-
 plt.ylabel("Reduced Chi-Squared")
-
 plt.title("Model Degree vs Reduced Chi-Squared")
-
 plt.grid(True)
-
 plt.show()
 
-#bayesian fit (BIC)
+#Plot graph for bayesian information criterion
 
-BIC = chi2 + 6 * np.log(len(x))
-plt.plot(degrees, BIC, marker="o")
+plt.figure(figsize=(8,5))
+plt.plot(degrees, bic_list, marker="o")
+plt.xlabel("Polynomial Degree")
+plt.ylabel("Bayesian Information Criterion")
+plt.title("Model Degree vs Reduced Chi-Squared")
+plt.grid(True)
 plt.show()
