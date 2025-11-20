@@ -17,15 +17,18 @@ CO2_df = df_world[(df_world['Year'] >= 1925) & (df_world['Year'] <= 2015)]
 print(CO2_df)
 
 #Created second df to only include 10 most recent years
-second_df = df_world[(df_world['Year'] >= 2015) & (df_world['Year'] <= 2025)]
+second_df = df_world[(df_world['Year'] >= 1925) & (df_world['Year'] <= 2025)]
 print(second_df)
 
-#use np.ployfit to create a....
+#defining my x and y axis
 x = CO2_df['Year']
 y = CO2_df['Global average temperature anomaly relative to 1861-1890']
 
+#creating a new variable to include all 100 years
+x2 = second_df['Year']
+
 coefficients = np.polyfit(x, y, 6)
-print("Linear Fit Coefficients:", coefficients)
+print("Ploynomial Fit Coefficients:", coefficients)
 
 # Create polynomial function
 p = np.poly1d(coefficients)
@@ -37,7 +40,6 @@ plt.show()
 
 
 # Chi-squared test checking for polynomial degrees
-
 
 degrees = range(1, 11)
 
@@ -77,11 +79,14 @@ plt.grid(True)
 plt.show()
 
 #Plot graph for bayesian information criterion
-
 plt.figure(figsize=(8,5))
 plt.plot(degrees, bic_list, marker="o")
 plt.xlabel("Polynomial Degree")
 plt.ylabel("Bayesian Information Criterion")
-plt.title("Model Degree vs Reduced Chi-Squared")
+plt.title("Model Degree vs BIC")
 plt.grid(True)
 plt.show()
+
+#Fit for a polynomial and return covariance matrix
+coeffs, cov = np.polyfit(x, y, deg=6, cov=True)
+print(coeffs, cov)
