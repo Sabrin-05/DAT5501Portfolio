@@ -33,6 +33,9 @@ print("Ploynomial Fit Coefficients:", coefficients)
 # Create polynomial function
 p = np.poly1d(coefficients)
 
+
+#Graph 1 
+#Ploynomial fit with an order of 6 
 plt.scatter(x, y, label='Data Points')
 plt.plot(x, p(x), label='Polynomial Fit', color='red')
 plt.legend()
@@ -40,7 +43,6 @@ plt.show()
 
 
 # Chi-squared test checking for polynomial degrees
-
 degrees = range(1, 11)
 
 chi2_list = []
@@ -68,7 +70,7 @@ for i in degrees:
     bic_list.append(BIC)
 
     
-
+#Graph 2  
 #Plot graph for reduced chi-squared
 plt.figure(figsize=(8,5))
 plt.plot(degrees, chi2_reduced_list, marker="o")
@@ -78,6 +80,8 @@ plt.title("Model Degree vs Reduced Chi-Squared")
 plt.grid(True)
 plt.show()
 
+
+#Graph 3 
 #Plot graph for bayesian information criterion
 plt.figure(figsize=(8,5))
 plt.plot(degrees, bic_list, marker="o")
@@ -86,6 +90,8 @@ plt.ylabel("Bayesian Information Criterion")
 plt.title("Model Degree vs BIC")
 plt.grid(True)
 plt.show()
+
+
 
 #Fit for a polynomial and return covariance matrix
 coeffs, cov = np.polyfit(x, y, deg=6, cov=True)
