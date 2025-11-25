@@ -3,9 +3,12 @@ import pandas as pd
 from time import perf_counter
 import matplotlib.pyplot as plt 
 
- # Calculating the daily change in assest price
 
- # Fetch the data.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Calculating the daily change in assest price
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Fetch the data.
 pricing_df = pd.read_csv("Week8/NVIDIA CORPORATION (03-20-2024 _ 11-07-2025).csv")
 print(pricing_df)
 
@@ -13,6 +16,9 @@ pricing_df['Price Change'] = pricing_df['Close'].diff()
 print(pricing_df[['Date', 'Close', 'Price Change']])
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Looping through start and close price to calculate change
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 '''for i in range(len(pricing_df['Close']) -1):
     start_price = pricing_df['Close'][i]
@@ -23,6 +29,10 @@ print(pricing_df[['Date', 'Close', 'Price Change']])
 pricing_df['Price Change'] = change_price
 print(pricing_df[['Date', 'Close', 'Price Change']])'''
 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Looping through dataset to calculate time taken to sort
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sample_size = list(range(7,365))
 time = []
 
@@ -33,8 +43,11 @@ for n in sample_size:
     end_time = perf_counter()
     time.append(end_time - start_time) 
 
-plt.plot(sample_size, time)
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Graph 1: Showing time taken to data as sample size increases
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+plt.plot(sample_size, time)
 plt.title('Daily Price Change NVDIA Calculation Time')
 plt.legend(["Calculation Time"])
 plt.xlabel('Sample Number')

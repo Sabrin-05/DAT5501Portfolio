@@ -5,11 +5,16 @@ import pandas as pd
 #Fitting and forecasting activity to test wheather a model is a good fit to a dataset
 #Fitting a sub-sample to polynomials 
 
+
 #Reading the data from the excel
 CO2_emissions_df= pd.read_csv("Week8/temperature-anomaly.csv")
 CO2_emissions_df["Year"] = pd.to_numeric(CO2_emissions_df["Year"], errors="coerce")
 print(CO2_emissions_df)
 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Cleaning and sorting data 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Cleaning the data 
 df_world = CO2_emissions_df[CO2_emissions_df['Entity'] == 'World']
@@ -19,6 +24,11 @@ print(CO2_df)
 #Created second df to only include 10 most recent years
 second_df = df_world[(df_world['Year'] >= 1925) & (df_world['Year'] <= 2025)]
 print(second_df)
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Variables and Polynomial function
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #defining my x and y axis
 x = CO2_df['Year']
@@ -34,7 +44,10 @@ print("Ploynomial Fit Coefficients:", coefficients)
 p = np.poly1d(coefficients)
 
 
-#Graph 1 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Graph 1: Showing polynomial fit with order of 6
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
 #Ploynomial fit with an order of 6 
 plt.scatter(x, y, label='Data Points')
 plt.plot(x, p(x), label='Polynomial Fit', color='red')
@@ -42,7 +55,9 @@ plt.legend()
 plt.show()
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Chi-squared test checking for polynomial degrees
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 degrees = range(1, 11)
 
 chi2_list = []
@@ -69,8 +84,11 @@ for i in degrees:
     chi2_reduced_list.append(chi2_reduced)
     bic_list.append(BIC)
 
-    
-#Graph 2  
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+#Graph 2: Showing reduced chi-sqaured   
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Plot graph for reduced chi-squared
 plt.figure(figsize=(8,5))
 plt.plot(degrees, chi2_reduced_list, marker="o")
@@ -81,7 +99,10 @@ plt.grid(True)
 plt.show()
 
 
-#Graph 3 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Graph 3: Showing bayesian information criterion
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Plot graph for bayesian information criterion
 plt.figure(figsize=(8,5))
 plt.plot(degrees, bic_list, marker="o")
@@ -92,7 +113,8 @@ plt.grid(True)
 plt.show()
 
 
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Fit for a polynomial and return covariance matrix
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 coeffs, cov = np.polyfit(x, y, deg=6, cov=True)
 print(coeffs, cov)
