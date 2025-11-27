@@ -15,22 +15,22 @@ Outputs a..........
 # Overview
 
 # Structure
-## /Week2
-   ### /CompIntCalc
-   ### /ReadME.txt
-/Week3
-   /CalanderPrinter
-   /PresentationGraph
-   /RetirementAgeData.csv
-/Week5
-   /DuractionCalc
-   /UnitTestCalc
-/Week8
-   /Data&ModelTesting
-   /TemperatureAnomoly.csv
-   /PriceSortingActivity
-   /NVIDIACorporationData.csv
-/Week10
-   /DecsionTreeClassifier
+## Week2
+   ### CompIntCalc
+   ### ReadME.txt
+## Week3
+   ### CalanderPrinter
+   ### PresentationGraph
+   ### RetirementAgeData.csv
+## Week5
+   ### DuractionCalc
+   ### UnitTestCalc
+## Week8
+   ### Data&ModelTesting
+   ### TemperatureAnomoly.csv
+   ### PriceSortingActivity
+   ### NVIDIACorporationData.csv
+## Week10
+   ### DecsionTreeClassifier
 
 # Weeks and Content
