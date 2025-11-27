@@ -5,18 +5,18 @@ Each week includes a variety activities and exercises which demonstrate differen
 
 Outputs: A series of weekly folders containing small coding projects/activities showcasing my programming progression
 
-# Table of Contents
+## Table of Contents
 1. Overview
 2. Repository Structure
 3. Languages and Libraries
 4. How to navigate folders
 
-# Overview
+### Overview
 - Main Goals: Improving my coding skills by compeleting a wide variety of activities
 - Developed: Data Analysis Skills, Machine Learning Skills 
 - Key Themes (Data Wrangerling, Data Visualisations, Data & Model Testing, Machine Learning, etc. )
 
-# Repository Structure
+### Repository Structure
 ```
  
 ├── Week2
@@ -72,11 +72,11 @@ Outputs: A series of weekly folders containing small coding projects/activities 
     
 ```
 
-# Languages and Libraries Used
+### Languages and Libraries Used
 - Languages: Python
 - Libraries: Numpy, Pandas, Unittest, SKlearn, Matplotlib
 
-# How to navigate the folders
+### How to navigate the folders
 1. Each week has a labeled folder
 2. Folder contains:
 - Main Code
