@@ -15,9 +15,9 @@ Outputs a..........
 # Overview
 
 # Structure
-/Week2
-   /CompIntCalc
-   /ReadME.txt
+#/Week2
+   ###/CompIntCalc
+   ###/ReadME.txt
 /Week3
    /CalanderPrinter
    /PresentationGraph
