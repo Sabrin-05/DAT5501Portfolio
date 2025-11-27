@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Fetch the data.
-pricing_df = pd.read_csv("Week8/NVIDIA CORPORATION (03-20-2024 _ 11-07-2025).csv")
+pricing_df = pd.read_csv("Week8/NVIDIACorporationData.csv")
 print(pricing_df)
 
 pricing_df['Price Change'] = pricing_df['Close'].diff()

@@ -7,7 +7,7 @@ import pandas as pd
 
 
 #Reading the data from the excel
-CO2_emissions_df= pd.read_csv("Week8/temperature-anomaly.csv")
+CO2_emissions_df= pd.read_csv("Week8/TemperatureAnomoly.csv")
 CO2_emissions_df["Year"] = pd.to_numeric(CO2_emissions_df["Year"], errors="coerce")
 print(CO2_emissions_df)
 
