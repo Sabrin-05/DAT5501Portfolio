@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 from sklearn import tree
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+import matplotlib.pyplot as plt
 
 from ucimlrepo import fetch_ucirepo 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9,17 +11,17 @@ from ucimlrepo import fetch_ucirepo
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # fetch dataset 
-tic_tac_toe_endgame = fetch_ucirepo(id=101) 
+breast_cancer_wisconsin_original = fetch_ucirepo(id=15) 
   
 # data (as pandas dataframes) 
-X = tic_tac_toe_endgame.data.features 
-y = tic_tac_toe_endgame.data.targets 
+X = breast_cancer_wisconsin_original.data.features 
+y = breast_cancer_wisconsin_original.data.targets 
   
 # metadata 
-print(tic_tac_toe_endgame.metadata) 
+print(breast_cancer_wisconsin_original.metadata) 
   
 # variable information 
-print(tic_tac_toe_endgame.variables) 
+print(breast_cancer_wisconsin_original.variables) 
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,3 +30,4 @@ print(tic_tac_toe_endgame.variables)
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42)
+
