@@ -1,4 +1,3 @@
-# A duration calculator that allows user to input a date an calculate how many days ago that was
 
 import numpy as np 
 import datetime 

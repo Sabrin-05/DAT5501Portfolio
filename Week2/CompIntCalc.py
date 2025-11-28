@@ -1,8 +1,12 @@
-# compound interest calculator that takes initial savings amount, years of saving, number of compounding periods and the annual interest rate.
-# for each year of savings it returns the total savings for that year. it also prints out how many years it would take for the savings amount 
-# to double.
+
 
 def comp_int_calculator():
+    '''
+    Function calculates total savings for each year based on initial savings, years of saving and annual interest rate
+
+    Returns:
+    None: Function prints out the annual saving totals
+    '''
     initial_saving = float(input("Enter your initial amount of savings: "))
     years = int(input("Enter the number of years you're saving for (whole numbers only): "))
     interest_rate = float(input("Enter the annual interest rate (decimal): "))
@@ -17,6 +21,12 @@ def comp_int_calculator():
         # running_total = initial_saving*(1 + interest_rate/comp_periods)**(comp_periods*time)
 
 def savings_double_calc():
+    '''
+    Function calculates number of years it takes for initial savings to double according to interest rate
+    
+    Returns:
+    None: Function currently not complete but would print out the number of years taken to double savings 
+    '''
     initial_savings =  float(input("Enter your initial amount of savings: "))
     interest_rate = float(input("Enter the annual interest rate (decimal): "))
     doubled_savings = initial_savings * 2

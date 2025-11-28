@@ -1,4 +1,4 @@
-# Created a calander printer to print the month correctly according to user input 
+
 def calander_printer():
     """
     Prints the calander for a specific week and month 
