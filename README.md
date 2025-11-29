@@ -19,6 +19,12 @@ Outputs: A series of weekly folders containing small coding projects/activities 
 ### Repository Structure
 ```
  
+├── Week1
+    └── lab1.py
+ 
+```
+```
+ 
 ├── Week2
     └── CompIntCalc.py
  
@@ -70,6 +76,14 @@ Outputs: A series of weekly folders containing small coding projects/activities 
 ├── Week10
     └── DecisionTreeClassifier.py
     
+```
+
+```
+ 
+├── ExtraProjects
+    └── CollectionManager
+           └── MainCode.py
+           └── TestCollectionManager.py
 ```
 
 ### Languages and Libraries Used
