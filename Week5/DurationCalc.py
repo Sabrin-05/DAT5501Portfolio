@@ -1,8 +1,10 @@
-
 import numpy as np 
 import datetime 
 import unittest
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Duration Calculator Function
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def dur_calc():
     """
     function takes in users date
