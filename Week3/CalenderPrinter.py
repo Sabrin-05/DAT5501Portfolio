@@ -1,4 +1,6 @@
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~
+#Calendar Printer Function
+#~~~~~~~~~~~~~~~~~~~~~~~~~
 def calander_printer():
     """
     Prints the calander for a specific week and month 
