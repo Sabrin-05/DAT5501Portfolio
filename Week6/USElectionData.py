@@ -11,24 +11,25 @@ print(df)
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Calculating average votes for [John Kasich] and [Ted Cruz]
+#Calculating average votes for [John Kasich] 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-def average_votes():
-    '''
-    Function calculates the average votes for a particular candidate in each state
-    '''
-    candidate_name = "John Kasich"
-    candidate_votes = df[df["candidate"] == candidate_name]
-    average_per_state = candidate_votes.groupby("state")["votes"].mean().reset_index()
-    print(f"John Kasich votes per state, {average_per_state}")
+
+#Filtering the dataframe for candidate John Kasich and his votes
+candidate_name = "John Kasich"
+candidate_votes = df[df["candidate"] == candidate_name]
+print(candidate_votes)
+
+#Calculating the average votes per state for John Kasich
+average_per_state = candidate_votes.groupby(["state","candidate"])["fraction_votes"].sum().reset_index()
+print(average_per_state)
     
-average_votes()
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Graph 1: Histogram showing average votes per state for John Kasich
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-plt.hist(average_votes, bins=10)
+plt.hist(average_per_state["fraction_votes"], bins=10, edgecolor='black')
 plt.title("Distribution of votes per state for John Kasich")
 plt.ylabel("Number of States")
-plt.xlabel("Average Votes") 
+plt.xlabel("Average Votes")
+plt.show()
